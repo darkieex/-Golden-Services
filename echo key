@@ -9,7 +9,7 @@ local Player = game.Players.LocalPlayer
 }) 
 
 function MakeScriptHub()
-         loadstring(game:HttpGet("https://github.com/darkieex/-Golden-Services/edit/main/echo%20hub#L12C48"))()
+         loadstring(https://raw.githubusercontent.com/darkieex/-Golden-Services/main/echo%20hub"))()
 end
 
 OrionLib:MakeNotification({
