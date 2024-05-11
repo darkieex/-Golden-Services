@@ -1,0 +1,116 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() 
+local Player = game.Players.LocalPlayer 
+  local Window = OrionLib:MakeWindow({
+		Name = "Echo KeySystem",
+		HidePremium = false,
+		SaveConfig = true,
+		ConfigFolder = "OrionTest",
+        IntroText = "Loading Script..."       
+}) 
+
+function MakeScriptHub()
+         loadstring(game:HttpGet("https://pastebin.com/raw/q6B5BCzc"))()
+end
+
+OrionLib:MakeNotification({
+	Name = "Logged In!",
+	Content = "You need key "..Player.Name..".",
+	Image = ".......",
+	Time = 5
+}) 
+
+getgenv().Key = "12d1e576" 
+getgenv().KeyInput = "string" 
+
+local Tab = Window:MakeTab({
+	Name = "about us",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+}) 
+
+local Section = Tab:AddSection({
+	Name = "discord link <--- click to copy"
+})
+
+Tab:AddButton({
+    Name = "click here",
+    Callback = function()
+        setclipboard("https://discord.gg/DVeNufTUgc")
+    end
+})
+
+local Section = Tab:AddSection({
+	Name = "youtube <--- click to copy "
+})
+Tab:AddButton({
+    Name = "click here",
+    Callback = function()
+        setclipboard("https://www.youtube.com/@Darkieex")
+    end
+})
+
+local Section = Tab:AddSection({
+	Name = "join the discord for more info and updates "
+})
+local Section = Tab:AddSection({
+	Name = "if you see any bugs report to us about it "
+})
+
+
+local Tab = Window:MakeTab({
+	Name = "key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+ 
+local Section = Tab:AddSection({
+	Name = "Section"
+})
+
+Tab:AddTextbox({
+	Name = "Key",
+	Default = "Enter Key.",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().KeyInput = Value
+	end	  
+}) 
+
+Tab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+            OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Correct Key!",
+                Content = "The key you entered is Correct.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(1)
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
+        else
+           OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Incorrect Key!",
+                Content = "The key you entered is incorrect.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+}) 
