@@ -1,71 +1,32 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() 
-local Player = game.Players.LocalPlayer 
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
   local Window = OrionLib:MakeWindow({
-		Name = "Echo KeySystem",
+		Name = "EXAMPLE HOW TO MAKE A KEY SYSTEM FOR MOBILE",
 		HidePremium = false,
 		SaveConfig = true,
 		ConfigFolder = "OrionTest",
         IntroText = "Loading Script..."       
-}) 
+}) --This Will Load The Script Hub
 
 function MakeScriptHub()
-         loadstring(" "))()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/darkieex/-Golden-Services/main/echo%20hub'))() --Put The Script That Will Load If The Key Is Correct Here
 end
 
 OrionLib:MakeNotification({
 	Name = "Logged In!",
 	Content = "You need key "..Player.Name..".",
-	Image = ".......",
+	Image = "rbxassetid://4483345998",
 	Time = 5
-}) 
+}) --Notification
 
-getgenv().Key = "12d1e576" 
-getgenv().KeyInput = "string" 
-
-local Tab = Window:MakeTab({
-	Name = "about us",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-}) 
-
-local Section = Tab:AddSection({
-	Name = "discord link <--- click to copy"
-})
-
-Tab:AddButton({
-    Name = "click here",
-    Callback = function()
-        setclipboard("https://discord.gg/DVeNufTUgc")
-    end
-})
-
-local Section = Tab:AddSection({
-	Name = "youtube <--- click to copy "
-})
-Tab:AddButton({
-    Name = "click here",
-    Callback = function()
-        setclipboard("https://www.youtube.com/@Darkieex")
-    end
-})
-
-local Section = Tab:AddSection({
-	Name = "join the discord for more info and updates "
-})
-local Section = Tab:AddSection({
-	Name = "if you see any bugs report to us about it "
-})
-
+getgenv().Key = "keyisfix" --Put The Correct Key Here
+getgenv().KeyInput = "string" --Require For The Key To Work
 
 local Tab = Window:MakeTab({
-	Name = "key",
+	Name = "Key",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
-})
- 
-local Section = Tab:AddSection({
-	Name = "Section"
-})
+}) --Making A Tab
 
 Tab:AddTextbox({
 	Name = "Key",
@@ -74,7 +35,7 @@ Tab:AddTextbox({
 	Callback = function(Value)
 		getgenv().KeyInput = Value
 	end	  
-}) 
+}) --You Will Enter The Key Here
 
 Tab:AddButton({
     Name = "Check Key",
@@ -113,4 +74,13 @@ Tab:AddButton({
             })
         end
     end
+}) --This Will Check The Key You Entered
+
+Tab:AddButton({
+	Name = "discord link",
+	Callback = function()
+      		setclipboard("https://discord.gg/qsHf5TVU87") --This Will Copy The Link Of The Key
+  	end    
 }) 
+    
+OrionLib:Init()
