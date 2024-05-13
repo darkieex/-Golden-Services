@@ -1,0 +1,109 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Echo HUB v4.0 Beta Version ", "Sentinel")
+
+local Tab = Window:NewTab("arsenal")
+local Section = Tab:NewSection("V.G-Hub <-- very op")
+Section:NewButton("click here", "ButtonInfo", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))() 
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("esp")
+Section:NewButton("click here", "ButtonInfo", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Lucasfin000/SpaceHub/main/UESP'))()  
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("BladeBall")
+local Section = Tab:NewSection("RedCircleBlock <-- bladeball only buggy")
+Section:NewButton("click here", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/RedCircleBlock"))()  
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("lox-Exploits <----- bladeball only")
+Section:NewButton("click here", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("Fov 120")
+Section:NewButton("click here", "ButtonInfo", function()
+    pcall(loadstring(game:HttpGet("https://pastebin.com/raw/PRw16c2Y")))
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("Speed 1 to 200")
+Section:NewSlider("SliderText", "SliderInfo", 200, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+local Tab = Window:NewTab("Da hood")
+local Section = Tab:NewSection("dimag X")
+Section:NewButton("click here", "ButtonInfo", function()
+  pcall(loadstring(game:HttpGet("https://pastebin.com/raw/PRw16c2Y")))  
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("universal Aimbot")
+local Section = Tab:NewSection("AirHub")
+Section:NewButton("click here", "ButtonInfo", function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/AirHub/main/AirHub.lua"))()   
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("blox fruits")
+local Section = Tab:NewSection("Winterhub_V2")
+Section:NewButton("click here", "ButtonInfo", function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Yatsuraa/Yuri/main/Winterhub_V2.lua"))()  
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Warrior Simulator")
+local Section = Tab:NewSection("Warrior Simulator: Walkspeed, Auto Rebirth & More")
+Section:NewButton("click here", "ButtonInfo", function()
+  --[[
+    rebirth
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("RebirthRequest"):InvokeServer()
+]]
+--[[
+    claim group sword
+    local args = {
+    [1] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("GroupReward"):FireServer(unpack(args))
+
+]]
+--[[
+    hit
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
+
+]]
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = 85
+local args = {
+    [1] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Common"):WaitForChild("Reward"):WaitForChild("GroupReward"):FireServer(unpack(args))
+
+function hi()
+    while true do wait()
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Weapon"):WaitForChild("TakeDamage"):FireServer()
+    end
+end
+while true do wait()
+    task.spawn(hi)
+end
+while true do wait(5)
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Profile"):WaitForChild("RebirthRequest"):InvokeServer()
+end  
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Prison Life BY ECHO")
+local Section = Tab:NewSection("Prison Life: Invis, Tp Tool & More")
+Section:NewButton("click here", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/darkieex/-Golden-Services/main/echo%20ps%20life"))()  
+    print("Clicked")
+end)
