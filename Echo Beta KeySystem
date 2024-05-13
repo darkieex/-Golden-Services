@@ -1,0 +1,102 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+		Name = "Echo Beta KeySystem",
+		HidePremium = false,
+		SaveConfig = true,
+		ConfigFolder = "OrionTest",
+        IntroText = "Loading Script..."       
+}) --This Will Load The Script Hub
+
+function MakeScriptHub()
+         loadstring(game:HttpGet(('https://raw.githubusercontent.com/darkieex/-Golden-Services/main/echo%20beta%20version')))() --Put The Script That Will Load If The Key Is Correct Here
+end
+
+OrionLib:MakeNotification({
+	Name = "Logged In!",
+	Content = "You need key "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+}) --Notification
+
+getgenv().Key = "098812" --Put The Correct Key Here
+getgenv().KeyInput = "string" --Require For The Key To Work
+
+local Tab = Window:MakeTab({
+	Name = "KeySystem",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+}) --Making A Tab
+
+Tab:AddTextbox({
+	Name = "Enter Key                                                  ---------->",
+	Default = "Enter",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().KeyInput = Value
+	end	  
+}) --You Will Enter The Key Here
+
+Tab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+            OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Correct Key!",
+                Content = "The key you entered is Correct.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(1)
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
+        else
+           OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Incorrect Key!",
+                Content = "The key you entered is incorrect.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+}) --This Will Check The Key You Entered
+
+local Section = Tab:AddSection({
+	Name = "KeySystem"
+})
+
+
+Tab:AddButton({
+	Name = "click here",
+	Callback = function()
+      		setclipboard("https://discord.gg/qsHf5TVU87") --This Will Copy The Link Of The Key
+  	end    
+})
+
+ local Section = Tab:AddSection({
+	Name = "dont have beta key go to the public version"
+})
+
+Tab:AddButton({
+	Name = "click here ( Public Version )",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/darkieex/-Golden-Services/main/echo%20new%20key'))() --This Will Copy The Link Of The Key
+  	end    
+})
+    
+OrionLib:Init()
